@@ -380,7 +380,7 @@ export namespace Chart {
     /**
      * The fill color under the line. See Colors
      */
-    backgroundColor?: string[];
+    backgroundColor?: string|string[];
     /**
      * The width of the line in pixels
      */
