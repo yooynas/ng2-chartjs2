@@ -73,7 +73,28 @@ export namespace Chart {
     };
     options?: {
       scales?: {
-        yAxes?: Array<{ticks?: {beginAtZero: boolean}}>
+        yAxes?: Array<{
+          ticks?: {
+            max?: number;
+            min?: number;
+            stepSize?: number;
+            beginAtZero: boolean;
+          }
+          stacked?: boolean;
+        }>
+        xAxes?: Array<{
+          ticks?:{
+            max?: number;
+            min?: number;
+            stepSize?: number;
+            beginAtZero: boolean;
+          }
+          type?: 'linear' | 'logarithmic' | 'time' | 'date' | 'radialLinear';
+          position?: 'top' | 'left' | 'bottom' | 'right';
+          display?: boolean;
+          id?: string;
+          barThickness: number;
+        }>
       },
       /**
        * Resizes when the canvas container does.
@@ -380,7 +401,7 @@ export namespace Chart {
     /**
      * The fill color under the line. See Colors
      */
-    backgroundColor?: string[];
+    backgroundColor?: string|string[];
     /**
      * The width of the line in pixels
      */
